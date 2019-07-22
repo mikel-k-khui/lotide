@@ -19,7 +19,7 @@ const assertEqual = function(actual, expected) {
   let str = "";
   let cond = "";
 
-  if(actual === expected) {
+  if (actual === expected) {
     str = passStr;
     cond = pass;
     //Assertion Passed: [actual] === [expected] (but with the values filled in)
