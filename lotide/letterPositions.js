@@ -36,16 +36,16 @@ const letterPositions = function(sentence) {
   const results = {};
   const senArray = sentence.slice();
 
-  for(var outter = 0; outter < senArray.length; outter++) {
-    var letter = senArray[outter];
+  for(var outter = 0; outter < senArray.length; outter++) { //loop through the input setnence
+    var letter = senArray[outter]; //take the current letter
 
-    if(letter in results) {
-      results[letter].push(outter);
+    if(letter in results) { //check if the letter is already in the results object
+      results[letter].push(outter); //if object already in, simply push it into the array
     } else {
-      results[letter] = [];
+      results[letter] = []; // create an array and push if this is the first occurence
       results[letter].push(outter);
       }
-      console.log(results);
+      //console.log(results); //uncomment to allow for code debug
   }
   return results;
 };
