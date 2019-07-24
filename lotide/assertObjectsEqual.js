@@ -70,7 +70,7 @@ const assertObjectsEqual = function(actual, expected) {
   const fail = " !== ";
 
   const inspect = require('util').inspect; // <= add this line
-  //console.log(`Example label: ${inspect(actual)}`);
+  console.log(`Example label: ${inspect(actual)}`);
 
   if (eqObjects(actual,expected)) {
     console.log(`${passStr} [${inspect(actual)}]${pass}[${inspect(expected)}]`);
