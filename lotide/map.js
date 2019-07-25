@@ -7,7 +7,7 @@ const eqArrays = function(act, exp) {
   } else {
     for (var counter = 0; counter < act.length; counter++)
     if (act[counter] != exp[counter]) {
-      console.log(act + exp);
+      //console.log(act + exp);
       equal = false;
     }
   }
@@ -30,31 +30,46 @@ const assertArraysEqual = function(actual, expected) {
 };
 /* ----------------- Implementation ----------------- */
 const map = function(array, callback) {
+  //console.log(callback);
   const results = [];
   for (let item of array) {
-    console.log(callback(item));
+
     results.push(callback(item));
   }
   return results;
 }
-
-/* test case #1
+/*
+//test case #1
 const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);
-console.log(results1);
-*/
+console.log(assertArraysEqual(results1, ["g","c","t","m","t"]));
+
 
 //test case #2
+
 const square = [3,5];
 const results2 = map(square, num => num * num);
-console.log(results2);
+console.log(assertArraysEqual(results2, ["9","25"]));
+
 
 //test case #3
+
 const finds = [["dog", "cat", "mice"],["cat", "mice"],["dolphin", "dog"]];
 const results3 = map(finds, find => find.includes("dog"));
-console.log(results3);
+console.log(assertArraysEqual(results3, [true, false, true]));
+
 
 //test case #4
+
 const animals = [["dog", "cat", "mice"],["cat", "mice"],["dolphin", "dog"]];
 const results4 = map(animals, strJoin => strJoin.join(","));
-console.log(results4);
+console.log(assertArraysEqual(results4, [["dog,cat,mice"], ["cat,mice"], ["dolphin,dog"]]));
+*/
+
+
+const factors = [3,5];
+const factorialize = function(num) { //call back function
+  return (num > 1) ? num *= factorialize(num-1) : 1;
+}
+const results5 = map(factors, factorialize); //passing the call back function in the map for iteration
+console.log(results5);
