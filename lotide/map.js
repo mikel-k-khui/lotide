@@ -1,4 +1,4 @@
-/* ----------------- Implementation ----------------- */
+/* ----------------- Support Functions ----------------- */
 const eqArrays = function(act, exp) {
   let equal = true;
 
@@ -30,7 +30,7 @@ const assertArraysEqual = function(actual, expected) {
 };
 /* ----------------- Implementation ----------------- */
 const map = function(array, callback) {
-  //console.log(callback);
+  console.log(callback());
   const results = [];
   for (let item of array) {
 
@@ -38,13 +38,13 @@ const map = function(array, callback) {
   }
   return results;
 }
-/*
+
 //test case #1
 const words = ["ground", "control", "to", "major", "tom"];
 const results1 = map(words, word => word[0]);
 console.log(assertArraysEqual(results1, ["g","c","t","m","t"]));
 
-
+/*
 //test case #2
 
 const square = [3,5];
@@ -72,4 +72,4 @@ const factorialize = function(num) { //call back function
   return (num > 1) ? num *= factorialize(num-1) : 1;
 }
 const results5 = map(factors, factorialize); //passing the call back function in the map for iteration
-console.log(results5);
+console.log(assertArraysEqual(results5,["6","120"]));
