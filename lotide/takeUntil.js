@@ -33,13 +33,14 @@ const takeUntil = function(array, callback) {
   console.log(callback);
   let results = [];
   for (let item of array) {
-    console.log(callback(item));
+    //console.log(callback(item));
     if (callback(item)) {
       return results;
     } else {
-    console.log(item);
+    //console.log(item);
     results.push(item);
     }
+  }
   return results;
 }
 
@@ -53,4 +54,4 @@ console.log('---');
 
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ",");
-console.log(assertArraysEqual(results2,[ 'I\'ve', 'been', 'to', 'Hollywood' ]);
+console.log(assertArraysEqual(results2,[ 'I\'ve', 'been', 'to', 'Hollywood' ]));
