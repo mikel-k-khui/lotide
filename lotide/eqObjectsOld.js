@@ -1,7 +1,6 @@
 /*
 Support functions
 */
-/*
 const assertEqual = function(actual, expected) {
   const passStr = "Assertion Passed: ";
   const failStr = "Assertion Failed: ";
@@ -22,7 +21,7 @@ const assertEqual = function(actual, expected) {
   }
   console.log(`${str} [${actual}]${cond}[${expected}]`);
 };
-*/
+
 const eqArrays = function(actual, expected) {
   let equal = true;
   
@@ -46,28 +45,17 @@ const eqObjects = function(object1, object2) {
   keys1 = Object.keys(object1);
   keys2 = Object.keys(object2);
   let currKey;
-  const inspect = require('util').inspect; //function to allow for inspection of objects
 
   if (keys1.length != keys2.length) return false;
   //return false if object of different number of objects
-  //console.log("Length okay"); //checks comment out
 
   for (currKey of keys1) { //loop through the objects
-    //console.log(`${inspect(object1)} vs ${inspect(object2)}`); //checks comment out
-
     // if one of the object's value is array but not both return false
-    if (1 == (Array.isArray(object1[currKey]) + Array.isArray(object2[currKey]))) {
-      //console.log("Only one is an array"); //checks comment out
-      return false;}
+    if (1 == (Array.isArray(object1[currKey]) + Array.isArray(object2[currKey]))) { return false;}
     else if (Array.isArray(object1[currKey]) && Array.isArray(object2[currKey])) {
-      //console.log("Both are arrays"); //checks comment out
-      if(!eqArrays(object1[currKey],object2[currKey])) { 
-        //console.log("Checking arrays"); //checks comment out
-        return false;}
+      if(!eqArrays(object1[currKey],object2[currKey])) { return false;}
     }
-    else if (!Array.isArray(object1[currKey]) && 
-    (inspect(object1[currKey]) !== inspect(object2[currKey]))) {
-      //console.log("array items don't agree"); //checks comment out
+    else if (!Array.isArray(object1[currKey]) && (object1[currKey] !== object2[currKey])) {
       return false;     // if the primitive value of one object's value does not equal the other
     }
   } 
@@ -93,7 +81,7 @@ const assertObjectsEqual = function(actual, expected) {
   }
 };
 
-/* Test cases 1
+/* Test cases 1 */
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 assertObjectsEqual(eqObjects(ab, ba), true);
@@ -101,14 +89,14 @@ assertObjectsEqual(eqObjects(ab, ba), true);
 const abc = { a: "1", b: "2", c: "3" };
 assertObjectsEqual(eqObjects(ab, abc), false);
 
-/* Test cases 2 
+/* Test cases 2 */
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertObjectsEqual(eqObjects(cd, dc), true);
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertObjectsEqual(eqObjects(cd, cd2), false);
-*/
+
 assertObjectsEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),true);
 
 assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),false);

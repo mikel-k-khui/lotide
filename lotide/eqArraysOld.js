@@ -3,18 +3,12 @@ const eqArrays = function(actual, expected) {
   let equal = true;
   
   if (actual.length !== expected.length) {
-    return false; // arrays are different
+    return false;
   } else {
-    for (var counter = 0; counter < actual.length; counter++) {
-      if(Array.isArray(actual[counter]) != Array.isArray(expected[counter])) {
-        return false;
-      } else if (Array.isArray(actual[counter]) && Array.isArray(expected[counter])) {
-        equal = eqArrays(actual[counter],expected[counter]);  // recursive function for cases when array within array
-      } else if (actual[counter] !== expected[counter]) {
-        return false;
-      }
+    for (var counter = 0; counter < actual.length; counter++)
+    if (actual[counter] !== expected[counter]) {
+      equal = false;
     }
-    //base case when the array item is primitive value and equals
   }
   return equal;
 };
@@ -53,6 +47,6 @@ assertEqual("1.0", 1); //different number format
 eqArrays([1, 2, 3], [1, 2, 3]) // => true
 eqArrays([1, 2, 3], [3, 2, 1]) // => false
 
-assertEqual(eqArrays(["1", "2", "3", ["1", ["2"]]], ["1", "2", "3", ["1", ["2"]]]), true);
-assertEqual(eqArrays(["1", "2", "3", [1, ["2"]]], ["1", "2", "3", ["1", ["2"]]]), false);
+console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
+console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
