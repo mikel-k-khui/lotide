@@ -111,5 +111,9 @@ assertObjectsEqual(eqObjects(cd, cd2), false);
 */
 assertObjectsEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),true);
 
+assertObjectsEqual(eqObjects({ a: { z: { y: 1 } }, b: 2 }, { a: { z: { y: 1 } }, b: 2 }),true);
+assertObjectsEqual(eqObjects({ a: { z: { y: 1 } }, b: 2 }, { a: { z: { y: 3 } }, b: 2 }),true);
+
+
 assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),false);
 assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
