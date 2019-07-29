@@ -43,3 +43,4 @@ const head = function(input) {
   }
 };
 
+module.exports = head;
