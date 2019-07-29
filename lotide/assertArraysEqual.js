@@ -1,17 +1,19 @@
 // FUNCTION IMPLEMENTATION
-const eqArrays = function(actual, expected) {
-  let equal = true;
+// const eqArrays = function(actual, expected) {
+//   let equal = true;
   
-  if (actual.length !== expected.length) {
-    return false;
-  } else {
-    for (var counter = 0; counter < actual.length; counter++)
-    if (actual[counter] !== expected[counter]) {
-      equal = false;
-    }
-  }
-  return equal;
-};
+//   if (actual.length !== expected.length) {
+//     return false;
+//   } else {
+//     for (var counter = 0; counter < actual.length; counter++)
+//     if (actual[counter] !== expected[counter]) {
+//       equal = false;
+//     }
+//   }
+//   return equal;
+// };
+
+const eqArrays = require('./eqArrays');
 
 // Use Template Literals
 const assertArraysEqual = function(actual, expected) {
@@ -29,8 +31,4 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]) // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1]) // => false
-
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+module.exports = assertArraysEqual;
