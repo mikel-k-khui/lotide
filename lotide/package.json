@@ -9,7 +9,8 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha",
+    "test-single": "./node_modules/mocha/bin/mocha $1"
   },
   "author": "",
   "license": "ISC"

@@ -63,12 +63,12 @@ const assertEqual = function(actual, expected) {
 const assertEqual = require('./assertEqual');
 
 const tail = function(input) {
-  var output = [];
+  var output = input.slice();
   if (input.length < 2) {
     return [];
   } else {
-    input.shift();
-    return input;
+    output.shift();
+    return output;
   }
 };
 
