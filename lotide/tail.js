@@ -39,26 +39,28 @@ const assertEqual = function(actual, expected) {
 };*/
 
 // Single values only - no arrays
-const assertEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// const assertEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
   
-  let str = "";
-  let cond = "";
+//   let str = "";
+//   let cond = "";
 
-  if (actual === expected) {
-    str = passStr;
-    cond = pass;
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    str = failStr;
-    cond = fail;
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-  console.log(`${str} [${actual}]${cond}[${expected}]`);
-};
+//   if (actual === expected) {
+//     str = passStr;
+//     cond = pass;
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     str = failStr;
+//     cond = fail;
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+//   console.log(`${str} [${actual}]${cond}[${expected}]`);
+// };
+
+const assertEqual = require('./assertEqual');
 
 const tail = function(input) {
   var output = [];
@@ -70,12 +72,4 @@ const tail = function(input) {
   }
 };
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
-assertEqual(result, ["LIGHThouse", "Labs"]); // => will always fail!
-
-// Test Case: Check the original array 
-let words = ["Yo Yo", "Lighthouse", "Labs"];
-test = tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
-assertEqual(test.length, 2); // original array should still have 3 elements!
+module.exports = tail;

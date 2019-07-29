@@ -5,27 +5,29 @@ An array with only one element should still yield that one element as its head
 An empty array should yield undefined as its head
 */
 
-// Use Template Literals
-const assertEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// // Use Template Literals
+// const assertEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
   
-  let str = "";
-  let cond = "";
+//   let str = "";
+//   let cond = "";
 
-  if (actual === expected) {
-    str = passStr;
-    cond = pass;
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    str = failStr;
-    cond = fail;
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-  console.log(`${str} [${actual}]${cond}[${expected}]`);
-};
+//   if (actual === expected) {
+//     str = passStr;
+//     cond = pass;
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     str = failStr;
+//     cond = fail;
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+//   console.log(`${str} [${actual}]${cond}[${expected}]`);
+// };
+
+const assertEqual = require('./assertEqual');
 
 const head = function(input) {
   if (input.length === 0) {
@@ -41,7 +43,3 @@ const head = function(input) {
   }
 };
 
-
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([[5,6],6,7]), 5);
