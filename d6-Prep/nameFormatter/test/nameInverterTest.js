@@ -62,7 +62,7 @@ it('should return honorific first-name when passed honorific first-name', functi
 
 it('should return a honorific last-name, first-name when passed honorific first-name last-name', function() {
   const inputName = "Dr. Susie Seuss";
-  const expectedOutput = "Dr. Suess, Susie";
+  const expectedOutput = "Dr. Seuss, Susie";
   assert.equal(nameInverter(inputName), expectedOutput);
 });
 // input: "Dr. first-name last-name"
@@ -70,15 +70,31 @@ it('should return a honorific last-name, first-name when passed honorific first-
 
 it('should return a honorific last-name, first-name when passed honorific first-name last-name with extra spaces around the words', function() {
   const inputName = " Dr. Susie  Seuss ";
-  const expectedOutput = "Dr. Suess, Susie";
+  const expectedOutput = "Dr. Seuss, Susie";
   assert.equal(nameInverter(inputName), expectedOutput);
 });
 // input: " Dr. first-name last-name "
 // output: "Dr. last-name, first-name"
 
+it('should return a honorific hypened last-name, first-name when passed honorific first-name last-name with extra spaces around the words', function() {
+  const inputName = " Dr. Susie  Seuss-Sue ";
+  const expectedOutput = "Dr. Seuss-Sue, Susie";
+  assert.equal(nameInverter(inputName), expectedOutput);
+});
+// input: " Dr. first-name last-name "
+// output: "Dr. last-name, first-name"
+
+it('should return error with too many arguments', function() {
+  const inputName = " Dr. Susie Sue Seuss ";
+
+  expect((inputName) => nameInverter().to.throw());
+});
+// input: " Dr. first-name middle-name last-name "
+// output: "Erro"
+
 it('should throw an error when name is undefined', function() {
 
-  expect(() => nameInverter().to.throw());
+  expect((undefined) => nameInverter().to.throw());
 
   // const expectedOutput;
  //  assert.throws(nameInverter(inputName), expectedOutput);
