@@ -23,19 +23,19 @@ const assertEqual = function(actual, expected) {
   console.log(`${str} [${actual}]${cond}[${expected}]`);
 };
 */
-const eqArrays = function(actual, expected) {
-  let equal = true;
+// const eqArrays = function(actual, expected) {
+//   let equal = true;
   
-  if (actual.length !== expected.length) {
-    return false;
-  } else {
-    for (var counter = 0; counter < actual.length; counter++)
-    if (actual[counter] !== expected[counter]) {
-      equal = false;
-    }
-  }
-  return equal;
-};
+//   if (actual.length !== expected.length) {
+//     return false;
+//   } else {
+//     for (var counter = 0; counter < actual.length; counter++)
+//     if (actual[counter] !== expected[counter]) {
+//       equal = false;
+//     }
+//   }
+//   return equal;
+// };
 
 /*
 Support functions: Returns true if both objects have identical keys with identical values.
@@ -73,25 +73,26 @@ const eqObjects = function(object1, object2) {
   } 
   return true;
 };
+module.exports = eqObjects;
 
 // FUNCTION IMPLEMENTATION
-const assertObjectsEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// const assertObjectsEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
 
-  const inspect = require('util').inspect; // <= add this line
-  //console.log(`Example label: ${inspect(actual)}`);
+//   const inspect = require('util').inspect; // <= add this line
+//   //console.log(`Example label: ${inspect(actual)}`);
 
-  if (eqObjects(actual,expected)) {
-    console.log(`${passStr} [${inspect(actual)}]${pass}[${inspect(expected)}]`);
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    console.log(`${failStr} [${inspect(actual)}]${fail}[${inspect(expected)}]`);
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-};
+//   if (eqObjects(actual,expected)) {
+//     console.log(`${passStr} [${inspect(actual)}]${pass}[${inspect(expected)}]`);
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     console.log(`${failStr} [${inspect(actual)}]${fail}[${inspect(expected)}]`);
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+// };
 
 /* Test cases 1
 const ab = { a: "1", b: "2" };
@@ -109,11 +110,11 @@ assertObjectsEqual(eqObjects(cd, dc), true);
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertObjectsEqual(eqObjects(cd, cd2), false);
 */
-assertObjectsEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),true);
+// assertObjectsEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),true);
 
-assertObjectsEqual(eqObjects({ a: { z: { y: 1 } }, b: 2 }, { a: { z: { y: 1 } }, b: 2 }),true);
-assertObjectsEqual(eqObjects({ a: { z: { y: 1 } }, b: 2 }, { a: { z: { y: 3 } }, b: 2 }),true);
+// assertObjectsEqual(eqObjects({ a: { z: { y: 1 } }, b: 2 }, { a: { z: { y: 1 } }, b: 2 }),true);
+// assertObjectsEqual(eqObjects({ a: { z: { y: 1 } }, b: 2 }, { a: { z: { y: 3 } }, b: 2 }),true);
 
 
-assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),false);
-assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+// assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }),false);
+// assertObjectsEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);

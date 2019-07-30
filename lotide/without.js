@@ -1,33 +1,33 @@
 // FUNCTION IMPLEMENTATION
-const eqArrays = function(act, exp) {
-  let equal = true;
+// const eqArrays = function(act, exp) {
+//   let equal = true;
   
-  if (act.length !== exp.length) {
-    return false;
-  } else {
-    for (var counter = 0; counter < act.length; counter++)
-    if (act[counter] !== exp[counter]) {
-      equal = false;
-    }
-  }
-  return equal;
-};
+//   if (act.length !== exp.length) {
+//     return false;
+//   } else {
+//     for (var counter = 0; counter < act.length; counter++)
+//     if (act[counter] !== exp[counter]) {
+//       equal = false;
+//     }
+//   }
+//   return equal;
+// };
 
-// Use Template Literals
-const assertArraysEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// // Use Template Literals
+// const assertArraysEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
 
-  if (eqArrays(actual,expected)) {
-    console.log(`${passStr} [${actual}]${pass}[${expected}]`);
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    console.log(`${failStr} [${actual}]${fail}[${expected}]`);
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-};
+//   if (eqArrays(actual,expected)) {
+//     console.log(`${passStr} [${actual}]${pass}[${expected}]`);
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     console.log(`${failStr} [${actual}]${fail}[${expected}]`);
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+// };
 
 const without = function(source, itemsToRemove) {
   let tracker= [];
@@ -50,11 +50,12 @@ const without = function(source, itemsToRemove) {
   return subset;
 };
 
+module.exports = without;
 
-// TEST CODE
-assertArraysEqual(without([1, 2, 3, 1, 2, 3], [1, 2]), [3, 3])
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"])
-const words = ["hello", "world", "lighthouse"];
-without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// // TEST CODE
+// assertArraysEqual(without([1, 2, 3, 1, 2, 3], [1, 2]), [3, 3])
+// assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"])
+// const words = ["hello", "world", "lighthouse"];
+// without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
+// // Make sure the original array was not altered by the without function
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);

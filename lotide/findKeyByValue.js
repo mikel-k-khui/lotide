@@ -1,24 +1,24 @@
 /* Support functions */
-const assertEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// const assertEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
   
-  let str = "";
-  let cond = "";
+//   let str = "";
+//   let cond = "";
 
-  if (actual === expected) {
-    str = passStr;
-    cond = pass;
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    str = failStr;
-    cond = fail;
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-  console.log(`${str} [${actual}]${cond}[${expected}]`);
-};
+//   if (actual === expected) {
+//     str = passStr;
+//     cond = pass;
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     str = failStr;
+//     cond = fail;
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+//   console.log(`${str} [${actual}]${cond}[${expected}]`);
+// };
 
 /* Code */
 const findKeyByValue = function(searchObj, seekValue) {
@@ -33,13 +33,13 @@ const findKeyByValue = function(searchObj, seekValue) {
   }
   return found;
 };
-
+module.exports = findKeyByValue;
 /* Test cases */
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
+// const bestTVShowsByGenre = { 
+//   sci_fi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama:  "The Wire"
+// };
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);

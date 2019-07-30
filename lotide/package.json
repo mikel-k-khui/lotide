@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@mikel.k.khui/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lighthouse Lab (July 2019 cohort) student  project to replicate functions in lodash library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -12,6 +12,9 @@
     "test": "./node_modules/mocha/bin/mocha",
     "test-single": "./node_modules/mocha/bin/mocha $1"
   },
-  "author": "",
+  "author": {
+    "name" : "Mike C",
+    "url" : "https://github.com/mikel-k-khui"
+  },
   "license": "ISC"
 }

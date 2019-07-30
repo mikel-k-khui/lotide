@@ -10,26 +10,26 @@ const assertEqual = function(actual, expected) {
 };*/
 
 // Use Template Literals
-const assertEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// const assertEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
   
-  let str = "";
-  let cond = "";
+//   let str = "";
+//   let cond = "";
 
-  if (actual === expected) {
-    str = passStr;
-    cond = pass;
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    str = failStr;
-    cond = fail;
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-  console.log(`${str} [${actual}]${cond}[${expected}]`);
-};
+//   if (actual === expected) {
+//     str = passStr;
+//     cond = pass;
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     str = failStr;
+//     cond = fail;
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+//   console.log(`${str} [${actual}]${cond}[${expected}]`);
+// };
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
@@ -47,6 +47,6 @@ const countLetters = function(inputStr) {
   }
   return results;
 };
-
+module.exports = countLetters;
 // TEST CODE
-console.log(countLetters("lighthouse in the house"));
+// console.log(countLetters("lighthouse in the house"));

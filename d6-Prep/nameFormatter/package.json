@@ -1,5 +1,5 @@
 {
-  "name": "nameInverter",
+  "name": "nameinverter",
   "version": "1.0.0",
   "description": "",
   "main": "nameInverter.js",
@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",

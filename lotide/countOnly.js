@@ -10,26 +10,26 @@ const assertEqual = function(actual, expected) {
 };*/
 
 // Use Template Literals
-const assertEqual = function(actual, expected) {
-  const passStr = "Assertion Passed: ";
-  const failStr = "Assertion Failed: ";
-  const pass = " === ";
-  const fail = " !== ";
+// const assertEqual = function(actual, expected) {
+//   const passStr = "Assertion Passed: ";
+//   const failStr = "Assertion Failed: ";
+//   const pass = " === ";
+//   const fail = " !== ";
   
-  let str = "";
-  let cond = "";
+//   let str = "";
+//   let cond = "";
 
-  if (actual === expected) {
-    str = passStr;
-    cond = pass;
-    //Assertion Passed: [actual] === [expected] (but with the values filled in)
-  } else {
-    str = failStr;
-    cond = fail;
-    //Assertion Failed: [actual] !== [expected] (but with the values filled in)
-  }
-  console.log(`${str} [${actual}]${cond}[${expected}]`);
-};
+//   if (actual === expected) {
+//     str = passStr;
+//     cond = pass;
+//     //Assertion Passed: [actual] === [expected] (but with the values filled in)
+//   } else {
+//     str = failStr;
+//     cond = fail;
+//     //Assertion Failed: [actual] !== [expected] (but with the values filled in)
+//   }
+//   console.log(`${str} [${actual}]${cond}[${expected}]`);
+// };
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
@@ -47,22 +47,23 @@ if (itemsToCount[item]) {
 }
 return results;
 };
+module.exports = countOnly;
 
 // TEST CODE
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
+// const firstNames = [
+//   "Karl",
+//   "Salima",
+//   "Agouhanna",
+//   "Fang",
+//   "Kavith",
+//   "Jason",
+//   "Salima",
+//   "Fang",
+//   "Joe"
+// ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true });
+// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true });
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
+// assertEqual(result1["Jason"], 1);
+// assertEqual(result1["Karima"], undefined);
+// assertEqual(result1["Fang"], 2);
